@@ -50,17 +50,17 @@
             // gridDatos
             // 
             this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDatos.Location = new System.Drawing.Point(32, 115);
+            this.gridDatos.Location = new System.Drawing.Point(12, 288);
             this.gridDatos.Name = "gridDatos";
-            this.gridDatos.Size = new System.Drawing.Size(137, 150);
+            this.gridDatos.Size = new System.Drawing.Size(789, 150);
             this.gridDatos.TabIndex = 1;
             // 
             // lstMostrar
             // 
             this.lstMostrar.FormattingEnabled = true;
-            this.lstMostrar.Location = new System.Drawing.Point(175, 127);
+            this.lstMostrar.Location = new System.Drawing.Point(12, 115);
             this.lstMostrar.Name = "lstMostrar";
-            this.lstMostrar.Size = new System.Drawing.Size(109, 147);
+            this.lstMostrar.Size = new System.Drawing.Size(309, 147);
             this.lstMostrar.TabIndex = 2;
             // 
             // btnPacientes
@@ -76,9 +76,9 @@
             // lstHabitaciones
             // 
             this.lstHabitaciones.FormattingEnabled = true;
-            this.lstHabitaciones.Location = new System.Drawing.Point(590, 115);
+            this.lstHabitaciones.Location = new System.Drawing.Point(407, 115);
             this.lstHabitaciones.Name = "lstHabitaciones";
-            this.lstHabitaciones.Size = new System.Drawing.Size(109, 147);
+            this.lstHabitaciones.Size = new System.Drawing.Size(336, 147);
             this.lstHabitaciones.TabIndex = 4;
             // 
             // bntHabitaciones

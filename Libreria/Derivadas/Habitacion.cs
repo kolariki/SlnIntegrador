@@ -9,17 +9,18 @@ namespace Libreria.Derivadas
 {
     public class Habitacion
     {
-        public Habitacion(int pnumero, string pestado, int pid)
-        {
-            Numero = pnumero;
-            Estado = pestado;
-            Id = pid;
-           
-        }
+
+        public int Id { get; set; }
         public int Numero { get; set; }
         public string Estado { get; set; }
-        public int Id { get; set; }
 
+        public Habitacion(int id, int numero, string estado)
+        {
+            Id = id;
+            Numero = numero;
+            Estado = estado;
+        }
 
+        public Habitacion() { }
     }
 }

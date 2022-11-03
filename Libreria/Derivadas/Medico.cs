@@ -9,14 +9,18 @@ namespace Libreria.Derivadas
 {
     public class Medico : Persona
     {
-        public Medico(string pnombre, string papellido, int pid, string pdomicilio, string ptelefono, string pcorreo, string pEspecialidad, int pMatricula) : base(pnombre, papellido, pid, pdomicilio, ptelefono, pcorreo)
-        {
-            Especialidad = pEspecialidad;
-            Matricula = pMatricula;
-        }
+
         public string Especialidad { get; set; }
         public int Matricula { get; set; }
 
+        public Medico(int id, string nombre, string apellido, string domicilio, string telefono, string email, string especialidad, int matricula) : base(id, nombre, apellido, domicilio, telefono, email)
+        {
+            Especialidad = especialidad;
+            Matricula = matricula;
+        }
 
+        public Medico()
+        {
+        }
     }
 }

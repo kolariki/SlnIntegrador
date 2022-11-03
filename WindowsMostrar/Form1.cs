@@ -11,55 +11,46 @@ using Datos;
 using Libreria.Derivadas;
 using Negocio;
 using Libreria.Entidades;
+using System.Collections;
 
 
 namespace WindowsMostrar
 {
-    public partial class Form1 : Form
-    {
-
-        AdmMedico admMedicos = new AdmMedico();
-        AdmPaciente admPacientes = new AdmPaciente();
-        AdmHabitacion admHabitaciones = new AdmHabitacion();
-
-
-        public Form1()
+   
+        public partial class Form1 : Form
         {
-            InitializeComponent();
-        }
+
+                    public Form1()
+            {
+                InitializeComponent();
+            }
 
         private void btnMostrarMedicos_Click(object sender, EventArgs e)
         {
-            gridDatos.DataSource = admMedicos.Listar("Clinico");
+
+            gridDatos.DataSource = AdmMedico.Listar();
 
             lstMostrar.Items.Clear();
-            foreach (Medico medico in admMedicos.Listar("Clínico"))
+            foreach (Medico medico in AdmMedico.Listar("Clínico"))
             {
-                lstMostrar.Items.Add(medico.Nombre + " " + medico.Apellido);
+                lstMostrar.Items.Add(medico.Nombre + " " + medico.Apellido + " ---> " + "MEDICO CLINICO");
             }
-
-
-        }
-
-        private void btnPacientes_Click(object sender, EventArgs e)
-        {
-            gridDatos.DataSource = admPacientes.Listar("clinicos");
-
-            lstMostrar.Items.Clear();
-            foreach (Paciente paciente in admPacientes.Listar("Clínico"))
-            {
-                lstMostrar.Items.Add(paciente.Nombre + " " + paciente.Apellido);
-            }
-
 
         }
 
         private void bntHabitaciones_Click(object sender, EventArgs e)
         {
-            foreach (Habitacion habitacion in admHabitaciones.Listar())
+            foreach (Habitacion habitacion in AdmHabitacion.Listar())
             {
                 lstHabitaciones.Items.Add("Número: " + habitacion.Numero + ", estado: " + habitacion.Estado);
             }
         }
+
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+            gridDatos.DataSource = AdmPaciente.Listar();
+        }
+
+        
     }
-}
+    }

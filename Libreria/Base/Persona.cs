@@ -6,22 +6,29 @@ using System.Threading.Tasks;
 
 namespace Libreria.Entidades.EntidadBase
 {
-    public class Persona
+    public abstract class Persona
     {
-        public Persona(string pnombre, string papellido, int pid, string pdomicilio, string ptelefono, string pcorreo)
-        {
-            Nombre = pnombre;
-            Apellido = papellido;
-            Id = pid;
-            Domicilio = pdomicilio;
-            Telefono = ptelefono;
-            Correo = pcorreo;
-        }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public int Id { get; set; }
         public string Domicilio { get; set; }
         public string Telefono { get; set; }
-        public string Correo { get; set; }
+        public string Email { get; set; }
+
+        public Persona(int id, string nombre, string apellido, string domicilio, string telefono, string email)
+        {
+            Id = id;
+            Nombre = nombre;
+            Apellido = apellido;
+            Domicilio = domicilio;
+            Telefono = telefono;
+            Email = email;
+        }
+
+        public Persona()
+        {
+
+        }
+
     }
 }

@@ -7,57 +7,36 @@ using Libreria.Derivadas;
 
 namespace Negocio
 {
+
     public static class AdmPaciente
     {
-        //declarar
+
         static List<Paciente> pacientes;
 
-        public static List<Paciente> Carga()
-        {
-
-            // crear la lista
-            pacientes = new List<Paciente>();
-
-
-
-            pacientes.Add(new Paciente("Juan", "Alvarez", 0, "Buenos Aires 428", "4564522", "juancarlos@gmail.com", "A193399"));
-            pacientes.Add(new Paciente("Julian", "Gomez", 1, "San Martin 12", "435345", "julian@gmail.com", "A43323"));
-
-   
-            return pacientes;
-
-        }
-
-        public static List<Paciente> Listar(string HistoriaClinica)
+        public static List<Paciente> Listar()
         {
             pacientes = new List<Paciente>();
-
-
-
-            pacientes.Add(new Paciente("Juan", "Alvarez", 0, "Buenos Aires 428", "4564522", "juancarlos@gmail.com", "A193399"));
-            pacientes.Add(new Paciente("Julian", "Gomez", 1, "San Martin 12", "435345", "julian@gmail.com", "A43323"));
-
-
+            pacientes.Add(new Paciente() { Id = 0, Nombre = "Pedro", Apellido = "Rojo", Domicilio = "xxxx", Telefono = "45642832", Email = "xxxxz@gmail.com", NroHistoriaClinica = 1, FechaNacimiento = new DateTime(1990, 11, 05) });
+            pacientes.Add(new Paciente() { Id = 1, Nombre = "Juan", Apellido = "Azul", Domicilio = "xxxx", Telefono = "261735824", Email = "jxxxx@gmail.com", NroHistoriaClinica = 2, FechaNacimiento = new DateTime(1989, 05, 05) });
+            pacientes.Add(new Paciente() { Id = 2, Nombre = "Equis", Apellido = "Verde", Domicilio = "xxxx", Telefono = "351734789", Email = "xxxxn@gmail.com", NroHistoriaClinica = 3, FechaNacimiento = new DateTime(2000, 08, 19) });
+            pacientes.Add(new Paciente() { Id = 3, Nombre = "Diamante", Apellido = "Amarillo", Domicilio = "xxxx", Telefono = "2612453792", Email = "xxx@gmail.com", NroHistoriaClinica = 4, FechaNacimiento = new DateTime(1700, 02, 27) });
             return pacientes;
         }
 
-        public static int Insertar(int pacientes)
+        public static int Insertar(Paciente paciente)
         {
-            //TODO Falta programar el método Eliminar
             return 0;
         }
 
-        public static int Eliminar(int pid)
+        public static int Eliminar(int id)
         {
-            //TODO Falta programar el método Eliminar
             return 0;
         }
 
-        public static int TraerUno(Paciente pid)
+        public static Paciente TraerUno(int nroHistoriaClinica)
         {
-            //TODO Falta programar el método Eliminar
-            return 0;
+            return null;
         }
+
     }
-
 }

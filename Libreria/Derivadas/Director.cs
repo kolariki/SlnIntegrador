@@ -7,17 +7,14 @@ using Libreria.Entidades.EntidadBase;
 
 namespace Libreria.Derivadas
 {
-    public class Director : Persona
+    public class Director : Medico
     {
-        public Director(string pnombre, string papellido, int pid, string pdomicilio, string ptelefono, string pcorreo, string pEspecialidad, int pMatricula, string pPosgrado) : base(pnombre, papellido, pid, pdomicilio, ptelefono, pcorreo)
-        {
-            Especialidad = pEspecialidad;
-            Matricula = pMatricula;
-            Posgrado = pPosgrado;
-        }
-        public string Especialidad { get; set; }
-        public int Matricula { get; set; }
         public string Posgrado { get; set; }
-      
+
+        public Director(int id, string nombre, string apellido, string domicilio, string telefono, string email, string especialidad, int matricula, string posgrado) : base(id, nombre, apellido, domicilio, telefono, email, especialidad, matricula)
+        {
+            Posgrado = posgrado;
+        }
+
     }
 }

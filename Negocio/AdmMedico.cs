@@ -8,62 +8,47 @@ using Libreria.Derivadas;
 
 namespace Negocio
 {
-    public static class AdmMedico
-    {
-        //declarar
-        static List<Medico> medicos;
-
-        public static List<Medico> Carga()
+            public static class AdmMedico
         {
 
-            // crear la lista
-            medicos = new List<Medico>();
+            static List<Medico> medicos;
 
-            medicos.Add(new Medico("Juan", "Alvarez", 0, "Buenos Aires 428", "4564522", "juancarlos@gmail.com", "Cirujano", 1999 ));
-            medicos.Add(new Medico("Julian", "Gomez", 1, "San Martin 12", "435345", "julian@gmail.com", "Cerebrista", 433));
-            medicos.Add(new Medico("Pedro", "Gonzales", 2, "Azcuebaga 333", "4456e522", "pedro@gmail.com", "Cardiologo", 554));
-            medicos.Add(new Medico("Mario", "Martin", 3, "Yrigoyen 322", "45erter22", "mario@gmail.com", "Maternoinfante", 19991));
+            public static List<Medico> Listar()
+            {
+                medicos = new List<Medico>();
+                medicos.Add(new Medico() { Id = 0, Nombre = "Francisco", Apellido = "Paton", Domicilio = "xxx xxx 123", Telefono = "261364173", Email = "xxx@gmail.com", Especialidad = "Clínico", Matricula = 1 });
+                medicos.Add(new Medico() { Id = 1, Nombre = "Pedro", Apellido = "Bro", Domicilio = "xxx 2482", Telefono = "346782423", Email = "xxx@gmail.com", Especialidad = "Traumatólogo", Matricula = 2 });
+                medicos.Add(new Medico() { Id = 2, Nombre = "Lolo", Apellido = "Amigo", Domicilio = "xxxx 342", Telefono = "354532534", Email = "xxx@gmail.com", Especialidad = "Clínico", Matricula = 3 });
+                medicos.Add(new Medico() { Id = 3, Nombre = "Lucas", Apellido = "Perez", Domicilio = "xxxx 864", Telefono = "253717434", Email = "xxx@gmail.com", Especialidad = "Pediatra", Matricula =4 });
+                return medicos;
+            }
 
-            return medicos;
+            public static List<Medico> Listar(string especialidad)
+            {
+                List<Medico> tempMedicos = new List<Medico> { };
+                foreach (Medico medico in medicos)
+                {
+                    if (medico.Especialidad == especialidad)
+                    {
+                        tempMedicos.Add(medico);
+                    }
+                }
+                return tempMedicos;
+            }
 
-        }
+            public static int Insertar(Medico medico)
+            {
+                return 0;
+            }
 
-        public static List<Medico> Listar(string especialidad)
-        {
-            medicos = new List<Medico>();
+            public static int Eliminar(int id)
+            {
+                return 0;
+            }
 
-            medicos.Add(new Medico("Juan", "Alvarez", 0, "Buenos Aires 428", "4564522", "juancarlos@gmail.com", "Cirujano", 1999));
-            medicos.Add(new Medico("Julian", "Gomez", 1, "San Martin 12", "435345", "julian@gmail.com", "Cerebrista", 433));
-            medicos.Add(new Medico("Pedro", "Gonzales", 2, "Azcuebaga 333", "4456e522", "pedro@gmail.com", "Cardiologo", 554));
-            medicos.Add(new Medico("Mario", "Martin", 3, "Yrigoyen 322", "45erter22", "mario@gmail.com", "Maternoinfante", 19991));
-
-            return medicos;
-        }
-
-        public static int ListarEspecialidad(string pespecialidad)
-        {
-            //TODO Falta programar el método Insertar
-            return 0;
-        }
-
-
-        public static int Insertar(int medicos)
-        {
-            //TODO Falta programar el método Eliminar
-            return 0;
-        }
-
-        public static int Eliminar(int pid)
-        {
-            //TODO Falta programar el método Eliminar
-            return 0;
-        }
-
-        public static int TraerUno(Medico pid)
-        {
-            //TODO Falta programar el método Eliminar
-            return 0;
+            public static Medico TraerUno(int id)
+            {
+                return null;
+            }
         }
     }
-
-}

@@ -7,13 +7,22 @@ using Libreria.Entidades.EntidadBase;
 
 namespace Libreria.Derivadas
 {
-    public class Paciente : Persona
+   
+    public class Paciente: Persona
     {
-        public Paciente(string pnombre, string papellido, int pid, string pdomicilio, string ptelefono, string pcorreo, string pnrohistoriaclinica) : base(pnombre, papellido, pid, pdomicilio, ptelefono, pcorreo)
+
+        public int NroHistoriaClinica { get; set; }
+        public DateTime FechaNacimiento { get; set; }
+
+        public int Edad { get { return UtilidadesFechas.CalcularEdad(FechaNacimiento); } }
+
+        public Paciente(int id, string nombre, string apellido, string domicilio, string telefono, string email, int nroHistoriaClinica, DateTime fechaNacimiento):base(id, nombre, apellido, domicilio, telefono, email)
         {
-            NroHistoriaClinica = pnrohistoriaclinica;
+            NroHistoriaClinica = nroHistoriaClinica;
+            FechaNacimiento = fechaNacimiento;
         }
-        public string NroHistoriaClinica{ get; set; }
+
+        public Paciente() { }
 
     }
 }
